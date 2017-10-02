@@ -84,6 +84,14 @@ decreasing
 steady
 random
 
+it was relevant to find a good length of the tasks. One reason is that
+for example in fifo evaluation, the order of execution should be know
+to make a meaningful evaluation. However, if the tasks take shorter time
+than thread creation, synchronization becomes an issue. Otherwise, if a
+task takes significantly longer, tasks/threads can just be created in
+sequence without synchronization. Synchronization is not straight forward
+as many constructs, such as normal conditional locks don't guarantee the
+sequence of threads released on broadcast.
 
 
 \subsection{Data Evaluation}
